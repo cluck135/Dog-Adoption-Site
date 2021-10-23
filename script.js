@@ -7,7 +7,6 @@ let breedOne = document.getElementById("random1");
 let breedTwo = document.getElementById("random2");
 let breedThree = document.getElementById("random3");
 let adoptionList = document.getElementById("adoptionList");
-let firstPic = ''
 
 
 
@@ -23,12 +22,14 @@ fetch(randomDoggo)
   }).then(function (data) {
     console.log(data)
     let Doggo = data
-    let breed = Doggo.message[0].split("breeds/")[1].split("/")[0]
+    let firstPic;
+    let secondPic;
+    let thirdPic;
     for(let i = 0; i<Doggo.message.length; i++){
         let img = Doggo.message[i]
         if(i == 0){
             breedOne.src= img
-            firstPic= breed
+            firstPic= Doggo.message[0].split("breeds/")[1].split("/")[0]
         }else if(i == 1){
             breedTwo.src = img
             secondPic=Doggo.message[1].split("breeds/")[1].split("/")[0]
@@ -37,14 +38,34 @@ fetch(randomDoggo)
             thirdPic= Doggo.message[2].split("breeds/")[1].split("/")[0]
         }
     }
-    function checkBreed(){
-        console.log(firstPic);
-        console.log(secondPic);
-        console.log(thirdPic);
-    }
-    checkBreed();
+    checkBreed(firstPic, secondPic, thirdPic);
   });
 
+  function checkBreed(firstPic, secondPic, thirdPic){
+
+    fetch('https://api.petfinder.com/v2/animals?type=dog&breed='+firstPic+'&page=1', {
+  method: 'GET',
+  headers: myHeaders,
+}) .then(function (response) {
+    console.log(response)
+    if(response.ok){
+        return response.json()
+    }else{
+        throw new Error(message || response.status)
+    }
+  
+}).then(function (data) {
+  console.log(data)
+  let Doggo1 = data
+
+
+});
+
+
+
+
+
+  }
 const myHeaders = new Headers();
 
 myHeaders.append('Content-Type', 'application/json');
@@ -68,7 +89,6 @@ fetch('https://api.petfinder.com/v2/types/Dog/breeds', {
 
 });
 
-
 fetch('https://api.petfinder.com/v2/animals?type=dog&page=1', {
   method: 'GET',
   headers: myHeaders,
@@ -86,17 +106,21 @@ fetch('https://api.petfinder.com/v2/animals?type=dog&page=1', {
   for(let i = 0; i<Doggo2.animals.length; i++){
       let picUrl = ''
       let dogDesc = Doggo2.animals[i].description
+      let dogName = Doggo2.animals[i].name
         if(data.animals[i].photos[0]){
             picUrl = data.animals[i].photos[0].full
         }
     let li = document.createElement("li")
     let anchor = document.createElement("a")
-    anchor.style.textDecoration = 'none';
+    let name = document.createElement("h1")
+    name.textContent = dogName
+    name.style.fontSize = '40px'
     let url = Doggo2.animals[i].url
     let pic = document.createElement("img")
 
     let desc = document.createElement("p")
     desc.style.display.inline
+    anchor.style.display.inline
     desc.innerText = dogDesc;
         if(data.animals[i].photos[0]){
             pic.setAttribute("src", picUrl)
@@ -107,12 +131,15 @@ fetch('https://api.petfinder.com/v2/animals?type=dog&page=1', {
     anchor.setAttribute("href", url)
     anchor.appendChild(pic)
     li.appendChild(anchor)
+    li.appendChild(name)
     li.appendChild(desc)
     adoptionList.appendChild(li)
   }
 });
 
-
+//curl -d "grant_type=client_credentials&client_id=5gyYpH99UKTQsKQ27CtKPorIMTjWhCWZf1Ky2kcDCHF9OiISmv&client_secret=Otrvy30rjrgjAu2XkRF9lyh3xrmrg3enhCOucfSH" https://api.petfinder.com/v2/oauth2/token
+// Curl command to generate auth token
+//Use Fetch command on page load to create new authorization token so no more issues with expiration
 
 
 
