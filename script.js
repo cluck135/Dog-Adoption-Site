@@ -48,7 +48,7 @@ fetch(randomDoggo)
 const myHeaders = new Headers();
 
 myHeaders.append('Content-Type', 'application/json');
-myHeaders.append('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1Z3lZcEg5OVVLVFFzS1EyN0N0S1BvcklNVGpXaENXWmYxS3kya2NEQ0hGOU9pSVNtdiIsImp0aSI6IjRmMjVhYjZmNTcxYzUwYWUyOWFiMDQxMjZhZjEyYmVhODY4NjNhZTM0NjIyMGQ4MWM0YjU4YWVmYTA3MTBjZWIwZjhiODk1MzFlNTkyZDYwIiwiaWF0IjoxNjM1MDA0ODY5LCJuYmYiOjE2MzUwMDQ4NjksImV4cCI6MTYzNTAwODQ2OSwic3ViIjoiIiwic2NvcGVzIjpbXX0.GcIHaiw-kj5myXyhw0sMOJEo9VxZG1sHyqSE2M5DCWBJUTuQtg9IOMk-el4ggxka05c9mV5A_CcIqheCkEQNLBj2EWJPju4ejntBb-iAJSukQTwE1BBK7qHYLGwdNJ8XRjSNn0GfgPmYc6_Nd0SwZXvd5GWPkWmbJSrU7oHJK69apNJBhHvC3EHZlRPXIF_cHkpwRuszfbe8dQvyVBcIJXS7SiEyEitFxZi17O3r6BimxS5gd4foj85IxMF-eySZ0OciCwI8Nzs9776LpkQI_GaGMCaXn_2nOkX4r5pCLlHdDmsKsXNOjmofs3SgbbCi9sTbbPMGWojSsoYReAcsXA');
+myHeaders.append('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1Z3lZcEg5OVVLVFFzS1EyN0N0S1BvcklNVGpXaENXWmYxS3kya2NEQ0hGOU9pSVNtdiIsImp0aSI6IjY1NjQ3YzU2Njk3MjEzNjU3MWZiOWMxMDQzYjljYjgxYWE0NDQ1ZjgyY2MxMGE5MTNlMzRkY2MwOTE2ZmFlNGQ0MGIzNjJiYWNlZDFmYmRhIiwiaWF0IjoxNjM1MDA4NTg1LCJuYmYiOjE2MzUwMDg1ODUsImV4cCI6MTYzNTAxMjE4NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.KDHKaM-_ZLpdee05r6E1S7XJ-XW2vn8wOkRo1Rs5TjoTGW9k1AeFCSIBGjfsJllUyhJzKyQ9BNKfN-kZQlhReuoLKTE-XkJ_oETxrN0xzUHAz0SbeKFN9vsdpFfp66_NmxCE1HB4xcEgkUYy64ECY3R7Wsd9vog2zDw0aw5HShuQQdTRgRqRL4_VvNcHQk_EykBoTbvZw9DXpiNk7cqwfTWmROHCXTRy5rUxhXOV7v961obxB4b57LU7kAOrL5JuezIVDD_cKO8BZWOgZVaoztGv1-Q15aJ5JLv3IfGpWCulJJvV5W7eHMPkYQUeohegE8EMdNAEpmacqMarRZFAcw');
 
 fetch('https://api.petfinder.com/v2/types/Dog/breeds', {
   method: 'GET',
@@ -91,9 +91,12 @@ fetch('https://api.petfinder.com/v2/animals?type=dog&page=1', {
         }
     let li = document.createElement("li")
     let anchor = document.createElement("a")
+    anchor.style.textDecoration = 'none';
     let url = Doggo2.animals[i].url
     let pic = document.createElement("img")
+
     let desc = document.createElement("p")
+    desc.style.display.inline
     desc.innerText = dogDesc;
         if(data.animals[i].photos[0]){
             pic.setAttribute("src", picUrl)
@@ -103,16 +106,12 @@ fetch('https://api.petfinder.com/v2/animals?type=dog&page=1', {
     pic.setAttribute("class", 'dogImg')
     anchor.setAttribute("href", url)
     anchor.appendChild(pic)
-    anchor.appendChild(desc)
     li.appendChild(anchor)
+    li.appendChild(desc)
     adoptionList.appendChild(li)
   }
 });
 
-// adoptionList.addEventListener('click', function(e){
-//     let link = e.target.parentNode.attributes[0].textContent
-
-// })
 
 
 
