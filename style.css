@@ -19,6 +19,13 @@
     font-weight: bold;
     font-size: 18px;
 }
+li{
+    display: flex;
+}
+li a{
+    width: 30%;
+    margin-right: 10px;
+}
 .randImg{
     margin: 5px;
     width: 100%;
@@ -27,6 +34,6 @@
 .dogImg{
     display: inline;
     margin: 5px;
-    width: 30%;
+    width: 100%;
     height: auto;
 }
