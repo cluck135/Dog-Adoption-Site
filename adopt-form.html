@@ -15,7 +15,7 @@
 <div class="field">
     <label class="label">Name</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="Text input">
+      <input class="input" type="text" placeholder="Name">
     </div>
   </div>
   </div>
@@ -24,7 +24,7 @@
     <div class="field">
         <label class="label">Address</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Text input">
+          <input class="input" type="text" placeholder="Address">
         </div>
       </div> 
       </div>  
@@ -33,10 +33,18 @@
         <div class="field">
             <label class="label">Email</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="Text input">
+              <input class="input" type="text" placeholder="Email">
             </div>
           </div> 
           </div> 
+          <div class="columns is-centered">
+            <div class="field">
+                <label class="label">Cell Phone</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" placeholder="Cell">
+                </div>
+              </div>
+              </div>
 
 <div class="columns is-centered"> 
   <div class="field">
@@ -72,17 +80,7 @@
     </div>
   </div>
 </div>
-  
-<div class="columns is-centered">
-  <div class="field">
-    <label class="label">Message</label>
-    <div class="control">
-      <textarea class="textarea" placeholder="Textarea"></textarea>
-    </div>
-  </div>
-</div>
-   
-  
+<br>
 <div class="columns is-centered"> 
   <div class="field">
     <div class="control">
@@ -97,7 +95,16 @@
     </div>
   </div>
   </div>
-  
+  <br>
+  <div class="columns is-centered">
+    <div class="field">
+      <label class="label">Please list any current or past pets</label>
+      <div class="control">
+        <textarea class="textarea is-small" placeholder="Type of Home"></textarea>
+      </div>
+    </div>
+  </div>
+  <br>
   <div class="columns is-centered"> 
     <div class="field">
       <div class="control">
@@ -112,28 +119,29 @@
       </div>
     </div>
     </div>
-  
+  <br>
   <div class="columns is-centered"> 
     <div class="field">
       <div class="control">
         <label class="checkbox">
           <input type="checkbox">
-          I agree to the <a href="#">terms and conditions</a>
+          I agree to the <a href="./Terms and conditions of adoption.pdf">terms and conditions</a>
         </label>
       </div>
     </div>
   </div> 
-
+<br>
   <div class="columns is-centered"> 
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link">Submit</button>
+      <button id="submit" class="button is-link">Submit</button>
     </div>
     <div class="control">
-      <button class="button is-link is-light">Cancel</button>
+      <button id="cancel" class="button is-link is-light">Cancel</button>
     </div>
   </div>
 </div>
 </div>
+<script src="adopt-form.js"></script>
 </body>
 </html>
