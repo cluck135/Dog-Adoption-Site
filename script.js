@@ -11,6 +11,11 @@ let breedThree = document.getElementById("random3");
 let randDoggos = document.querySelector(".randImgs");
 let randImg = document.querySelectorAll(".randImg")
 let adoptionList = document.getElementById("adoptionList");
+let minNumber = Math.ceil(1);
+let maxNumber = Math.floor(4827);
+let randomNumber = Math.floor(
+  Math.random() * (maxNumber - minNumber) + minNumber
+);
 
 
 
@@ -56,30 +61,30 @@ fetch(randomDoggo)
 const myHeaders = new Headers();
 
 myHeaders.append('Content-Type', 'application/json');
-myHeaders.append('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1Z3lZcEg5OVVLVFFzS1EyN0N0S1BvcklNVGpXaENXWmYxS3kya2NEQ0hGOU9pSVNtdiIsImp0aSI6ImNjMzUxMmExZDI2YmFkYjgxYmY1MWE1MWU3N2IyYThkZWY5YWMwMDU4MDIzYTk3Zjg4NmY2ZTNhNGZhZjQ4MDRlNmVlMDI1NjJmOTkxMGMyIiwiaWF0IjoxNjM1MTA1Mzc4LCJuYmYiOjE2MzUxMDUzNzgsImV4cCI6MTYzNTEwODk3OCwic3ViIjoiIiwic2NvcGVzIjpbXX0.ETmDgdgRubBQb6MaYU36po1i6fOD5WxgxSX25akUpXeBCIhyHUiEONwEj2m8PO6zJXQBNlAeU2iFxeBu7YdtnHDX7JzsLDgrAGIuR2lvnS7ljE_yrMNmhooCVE3cEh8W746bfhSf2gw7V5_cJrUeDFPeBbapJqY72sVeJXHN_PbDmd7AXtOegseHjLQ9W7PXVM94qgqB5aKI8ZZ8FY_4BcJUONLyHqrBX7nAz0lMy0WDy0872q5hTotgRXpVHfMo8op9ScYUvF87oiGPOPzBneUHoIC1oWHGikiBnTCog25JtcuThf5GM3XAyC888sno4Jqh8XOJKANt4ViTjc2Rnw');
+myHeaders.append('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1Z3lZcEg5OVVLVFFzS1EyN0N0S1BvcklNVGpXaENXWmYxS3kya2NEQ0hGOU9pSVNtdiIsImp0aSI6IjM3ODY5MzU0M2Y4OTcwMWJkODFkZWM1NmQyNWE3OTU1ZmNhZTdkZjRlMWI0OTQ1NWEzMWVmOTE2ZDY3MDU1ZjgxZWViZDQxMjU1OGRiMDRhIiwiaWF0IjoxNjM1Mjg5NDk2LCJuYmYiOjE2MzUyODk0OTYsImV4cCI6MTYzNTI5MzA5Niwic3ViIjoiIiwic2NvcGVzIjpbXX0.MVU77tQ-A9I9qLjEobwEesRACp5xnP0CM5ig8tlXhk57CyCq8bLS9nRjIylGXzx0ug42Ua-te659gpnA-yzNm2hZmf0atke7VeOg7bjgi7H1wMbztG4gcHD2RCbZBKbyWFJM6qQ3yBXAjoFIUTmECJojoINdgPMChYgvwxwO3JgI36gX3peN03EMoQXtvr6k_0NwRrl7FB41E7JRTsnFvTRj3Y88EWkDg9hDaBdED5ZFDbkP-F9pTcZMB2TIhfGddp8xLe05ltG6roU4pndiAG4EXAGNPI1bkWLCG9_tvj-DmcY8bsUSPaJZqy3Yte_FaK0uyMLWgl6RBE-wZeTkZQ');
 
-fetch('https://api.petfinder.com/v2/types/Dog/breeds', {
-  method: 'GET',
-  headers: myHeaders,
-}) .then(function (response) {
-    console.log(response)
-    if(response.ok){
-        return response.json()
-    }else{
-        throw new Error(message || response.status)
-    }
+// fetch('https://api.petfinder.com/v2/types/Dog/breeds', {
+//   method: 'GET',
+//   headers: myHeaders,
+// }) .then(function (response) {
+//     console.log(response)
+//     if(response.ok){
+//         return response.json()
+//     }else{
+//         throw new Error(message || response.status)
+//     }
   
-}).then(function (data) {
-  console.log(data)
-  let Doggo1 = data
+// }).then(function (data) {
+//   console.log(data)
+//   let Doggo1 = data
 
 
-});
+// });
 
-fetch('https://api.petfinder.com/v2/animals?type=dog&page=1', {
+fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
   method: 'GET',
   headers: myHeaders,
-}) .then(function (response) {
+}).then(function (response) {
     console.log(response)
     if(response.ok){
         return response.json()
