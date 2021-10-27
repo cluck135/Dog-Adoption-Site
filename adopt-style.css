@@ -1,0 +1,18 @@
+.submitPage {
+    display: none;
+}
+
+.formPage {
+    display: block;
+}
+
+.submitPage h1 {
+font-size: large;
+font-weight: bolder;
+}
+
+#home {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
