@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Dog Adoption</title>
 </head>
@@ -12,7 +13,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <img class="is-rounded" src="./paw.gif" alt="Dog Paw Print" width="100" height="100">
-            <h1 class="has-text-weight-bold has-text-white is-size-1">My Dog Adoption</h1>
+            <h1 class="has-text-weight-bold has-text-white is-size-1 ml-5">My Dog Adoption</h1>
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -25,7 +26,7 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item has-text-white">
-              Home
+              <p class="navbar-text">Home</p>
             </a>
       
             <a class="navbar-item has-text-white" href="#about">
@@ -60,13 +61,17 @@
       </nav>
     <main class="mb-20">
         <div class="columns">
-            <div id="facts" class="column">
+            <div id="facts" class="column ml-5 mt-4">
                 Approximately 6.5 million companion animials enter U.S. animal shelters nationwide every year. More than half will not make it out alive 
             </div>
-            <div id="facts" class="column">
+            <div id="facts" class="column ml-5 mt-4">
                 In just six years, one unspayed female dog and her offspring can create 67,000 dogs
             </div>
                 
+        </div>
+
+        <div>
+          <button id="random-button" class="ml-4" type ="button"> Randomize</button>
         </div>
     </main>
     <section class="columns randImgs" >
@@ -74,6 +79,9 @@
         <div class="column is-one-third" ><img data-index="1"class="randImg" id="random2"></img></div>
         <div class="column is-one-third" ><img data-index="2" class="randImg" id="random3"></img></div>
     </section>
+    <div> 
+      <p class="my-10"> jhdalfjadj</p>
+    </div>
     <article>
         <ul id="adoptionList">
 
