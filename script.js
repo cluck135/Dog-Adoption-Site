@@ -2,7 +2,7 @@ let randomBreedList = "https://dog.ceo/api/breeds/list/all";
 let randomDoggo = "https://dog.ceo/api/breeds/image/random/3";
 
 let message = "Breed of that type is not available for adoption";
-let placeholder = "https://meredith.nhcrafts.org/wp-content/uploads/dog-placeholder.jpg";
+let placeholder = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcountrylabradoodles.com%2Fwp-content%2Fuploads%2F2017%2F11%2Fdog-coming-soon1-400x267.jpeg&f=1&nofb=1";
 
 let breedOne = document.getElementById("random1");
 let breedTwo = document.getElementById("random2");
@@ -11,6 +11,7 @@ let randDoggos = document.querySelector(".randImgs");
 let randImg = document.querySelectorAll(".randImg");
 let adoptionList = document.getElementById("adoptionList");
 let randomBtn = document.getElementById("random-button");
+let errorMsg = document.getElementById("error-message");
 
 displayRandomDogs(randomDoggo);
 
@@ -124,6 +125,7 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&page=1", {
     if (response.ok) {
       return response.json();
     } else {
+        
       throw new Error(message || response.status);
     }
   })
@@ -131,6 +133,7 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&page=1", {
     console.log(data);
     let Doggo2 = data;
     for (let i = 0; i < Doggo2.animals.length; i++) {
+        
       let picUrl = "";
       let dogDesc = Doggo2.animals[i].description;
       let dogName = Doggo2.animals[i].name;
@@ -176,6 +179,7 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&page=1", {
 
       adoptionList.appendChild(li);
     }
+    
   });
 
 function removeAllChildNodes(parent) {
@@ -199,8 +203,10 @@ randDoggos.addEventListener("click", function (e) {
     .then(function (response) {
       console.log(response);
       if (response.ok) {
+          errorMsg.innerText =""
         return response.json();
       } else {
+            errorMsg.innerText = "That dog breed is not up for adoption! Try another one!";
         throw new Error(message || response.status);
       }
     })
@@ -221,6 +227,8 @@ randDoggos.addEventListener("click", function (e) {
         let anchor = document.createElement("a");
         let formAnchor = document.createElement("a");
         let formBtn = document.createElement("button");
+        formAnchor.setAttribute("href", "./adopt-form.html");
+        formBtn.innerText = "Adoption Form";
         let name = document.createElement("h1");
         let url = Doggo1.animals[i].url;
         let pic = document.createElement("img");

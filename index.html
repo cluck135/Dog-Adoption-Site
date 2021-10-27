@@ -25,37 +25,15 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item has-text-white">
-              <p class="navbar-text">Home</p>
+            <a class="navbar-item has-text-black has-text-weight-semibold is-size-4 navbar-text">
+              Home
             </a>
       
-            <a class="navbar-item has-text-white" href="#about">
+            <a class="navbar-item has-text-black has-text-weight-semibold is-size-4" href="#about">
                 About
               </a>
 
-            <a class="navbar-item has-text-white" href="" target="_blank">
-              Adopt Today
-            </a>
       
-            <div class="navbar-item has-dropdown is-hoverable is-right">
-              <a class="navbar-link has-text-white">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item has-text-black">
-                  Contact Us
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item has-text-black">
-                  Report an issue
-                </a>
-              </div>
-              <hr class="navbar-divider">
-                <div class="navbar-item has-text-white">
-                    Version 0.9.3
-                </div>
-            </div>
           </div>
         </div>
       </nav>
@@ -70,8 +48,9 @@
                 
         </div>
 
-        <div>
+        <div id="random-div">
           <button id="random-button" class="ml-4" type ="button"> Randomize</button>
+          <p class="ml-4"> Click on an image to filter results below!</p> 
         </div>
     </main>
     <section class="columns randImgs" >
@@ -79,8 +58,7 @@
         <div class="column is-one-third" ><img data-index="1"class="randImg" id="random2"></img></div>
         <div class="column is-one-third" ><img data-index="2" class="randImg" id="random3"></img></div>
     </section>
-    <div> 
-      <p class="my-10"> jhdalfjadj</p>
+    <div class="columns is-centered" id="error-message"> 
     </div>
     <article>
         <ul id="adoptionList">

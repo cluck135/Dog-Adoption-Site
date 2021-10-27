@@ -35,19 +35,23 @@ li a{
     width: 100%;
     height: 300px;
     border: black solid 3px
-
+}
+.randImg:hover{
+    cursor: pointer;
 }
 .dogImg{
     display: inline;
     margin: 5px;
     width: 100%;
     height: auto;
-    border: black solid 3px
+    border: black solid 3px;
+    border-radius:10px
 }
-
 .navbar-text :hover{
 color: black
 }
-#random-button{
 
+#random-div{
+text-align: center;
 }
+
