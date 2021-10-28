@@ -93,6 +93,7 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
   .then(function (data) {
     console.log(data);
     localStorage.setItem("auth", JSON.stringify(data));
+    getAdoptionList();
   });
 
 let randAuthToken = JSON.parse(localStorage.getItem("auth"));
@@ -120,7 +121,7 @@ myHeaders.append("Authorization", "Bearer " + authToken + "");
 //     console.log(data);
 //     let Doggo1 = data;
 //   });
-
+function getAdoptionList(){
 fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
   method: "GET",
   headers: myHeaders,
@@ -187,7 +188,7 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
 
       adoptionList.appendChild(li);
     }
-  });
+  })};
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
@@ -199,7 +200,7 @@ randDoggos.addEventListener("click", function (e) {
   let index = e.target.dataset.index;
   let randBreedArray = JSON.parse(localStorage.getItem("breeds"));
   let breed = randBreedArray[index];
-
+  if(e.target.dataset.index !== undefined){
   fetch(
     "https://api.petfinder.com/v2/animals?type=dog&breed=" + breed + "&page=1",
     {
@@ -269,7 +270,10 @@ randDoggos.addEventListener("click", function (e) {
 
         adoptionList.appendChild(li);
       }
-    });
+    })}
+    else{
+      errorMsg.innerText = "Click the image not the text!"
+    };
 });
 
 randomBtn.addEventListener("click", function () {

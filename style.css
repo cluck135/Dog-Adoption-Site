@@ -58,7 +58,6 @@ li a {
 }
 
 .random-breed {
-  text-transform: capitalize;
   font-size: 20px;
   font-weight: 300;
   text-decoration: underline black;
