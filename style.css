@@ -30,7 +30,7 @@ li a {
   margin-right: 10px;
 }
 .randImg {
-  margin: 5px;
+  margin: 20px 0px;
   width: 100%;
   height: 300px;
   border: black solid 3px;
@@ -40,6 +40,7 @@ li a {
   cursor: pointer;
   box-shadow: black 10px 5px 5px;
 }
+
 .dogImg {
   display: inline;
   margin: 5px;
@@ -48,8 +49,8 @@ li a {
   border: black solid 3px;
   border-radius: 10px;
 }
-.navbar-text :hover {
-  color: black;
+.dogImg:hover {
+  box-shadow: black 10px 5px 5px;
 }
 
 #random-div {
@@ -60,4 +61,54 @@ li a {
   text-transform: capitalize;
   font-size: 20px;
   font-weight: 300;
+  text-decoration: underline black;
+  margin: top -15px;
+}
+
+#random-button {
+  background-color: burlywood;
+  border-radius: 10px;
+  color: #010203;
+}
+
+#random-button:hover {
+  background-color: rgba(245, 142, 7, 0.863);
+  box-shadow: black 10px 5px 5px;
+  transition: 0.5s;
+}
+
+.pet-finder-div {
+  margin-left: 25px;
+  background-color: burlywood;
+  height: min-content;
+  padding: 10px 35px 30px 20px;
+  border: black solid 3px;
+}
+
+.navbar-item:hover {
+  background-color: black !important;
+}
+
+#pet-finder-name {
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+#random2 {
+  margin-left: -10px;
+}
+#random3 {
+  margin-left: -25px;
+}
+#random1 {
+  margin-left: 5px;
+}
+
+#pet-finder-description {
+  color: white;
+  font-size: 20px;
+}
+.adoption-button {
+  background-color: rgba(245, 142, 7, 0.863);
 }

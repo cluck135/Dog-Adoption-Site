@@ -16,6 +16,11 @@ let errorMsg = document.getElementById("error-message");
 let randDogBreedOne = document.getElementById("rand-dog-breed-one");
 let randDogBreedTwo = document.getElementById("rand-dog-breed-two");
 let randDogBreedThree = document.getElementById("rand-dog-breed-three");
+let minNumber = Math.ceil(1);
+let maxNumber = Math.floor(4924);
+let randomNumber = Math.floor(
+  Math.random() * (maxNumber - minNumber) + minNumber
+);
 
 displayRandomDogs(randomDoggo);
 
@@ -116,7 +121,7 @@ myHeaders.append("Authorization", "Bearer " + authToken + "");
 //     let Doggo1 = data;
 //   });
 
-fetch("https://api.petfinder.com/v2/animals?type=dog&page=1", {
+fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
   method: "GET",
   headers: myHeaders,
 })
@@ -140,15 +145,21 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&page=1", {
       }
       let li = document.createElement("li");
       let div = document.createElement("div");
+      div.classList.add("pet-finder-div");
       let anchor = document.createElement("a");
       let formAnchor = document.createElement("a");
       let formBtn = document.createElement("button");
+      formBtn.classList.add("adoption-button");
       formAnchor.setAttribute("href", "./adopt-form.html");
       formBtn.innerText = "Adoption Form";
+      formAnchor.target = "_blank";
+      anchor.target = "_blank";
       let name = document.createElement("h1");
+      name.setAttribute("id", "pet-finder-name");
       let url = Doggo2.animals[i].url;
       let pic = document.createElement("img");
       let desc = document.createElement("p");
+      desc.setAttribute("id", "pet-finder-description");
       li.style.display.flex;
       anchor.style.display.inline;
       name.textContent = dogName;
@@ -224,6 +235,7 @@ randDoggos.addEventListener("click", function (e) {
         let anchor = document.createElement("a");
         let formAnchor = document.createElement("a");
         let formBtn = document.createElement("button");
+        anchor.target = "_blank";
         formAnchor.setAttribute("href", "./adopt-form.html");
         formBtn.innerText = "Adoption Form";
         let name = document.createElement("h1");
