@@ -22,7 +22,7 @@ let randomNumber = Math.floor(
   Math.random() * (maxNumber - minNumber) + minNumber
 );
 
-var audio = new Audio("Projects\Dog-Adoption-Site\single-dog-woof-sound.mp3");
+var audio = new Audio("ES_Dog Bark 21 - SFX Producer (1).mp3");
 
 displayRandomDogs(randomDoggo);
 
