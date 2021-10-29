@@ -9,63 +9,61 @@
     <title>Adoption Form</title>
 </head>
 <body>
- <br>
- <br>
 <div class=formPage>
+<br>
+<br>
 <div class="columns is-centered">
-<div class="field">
+  <div class="field">
     <label class="label">Name</label>
-    <div class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="Name">
+      <div class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Name" id="nameValue">
+      </div>
     </div>
-  </div>
   </div>
 
   <div class="columns is-centered">
     <div class="field">
-        <label class="label">Address</label>
+      <label class="label">Address</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Address">
+            <input class="input" type="text" placeholder="Address" id="addressValue">
         </div>
       </div> 
-      </div>  
-
-      <div class="columns is-centered">
-        <div class="field">
-            <label class="label">Email</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="Email">
-            </div>
+    </div>  
+  <div class="columns is-centered">
+    <div class="field">
+      <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Email" id="emailValue">
+          </div>
+      </div> 
           </div> 
-          </div> 
-          <div class="columns is-centered">
-            <div class="field">
-                <label class="label">Cell Phone</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input" type="text" placeholder="Cell">
-                </div>
-              </div>
-              </div>
-
-<div class="columns is-centered"> 
-  <div class="field">
-    <label class="label">Reason for adoption</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Companion for child</option>
-          <option>Companion for other pet</option>
-          <option>Companion for self</option>
-          <option>Security</option>
-          <option>Breeding</option>
-          <option>Working Dog</option>
-          <option>Other</option>
-        </select>
+  <div class="columns is-centered">
+    <div class="field">
+        <label class="label">Cell Phone</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input" type="text" placeholder="Cell" id="cellValue">
+        </div>
+      </div>
+      </div>
+  <div class="columns is-centered"> 
+    <div class="field">
+      <label class="label">Reason for Adoption</label>
+      <div class="control">
+        <div class="select">
+          <select>
+            <option>Companion for child</option>
+            <option>Companion for other pet</option>
+            <option>Companion for self</option>
+            <option>Security</option>
+            <option>Breeding</option>
+            <option>Working Dog</option>
+            <option>Other</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
+<br>
 <div class="columns is-centered"> 
   <div class="field">
     <label class="label">Type of Home</label>
@@ -131,27 +129,36 @@
       </div>
     </div>
   </div> 
+  <div class="columns is-centered">
+  <div class="field">
+  <p id="error"></p>
+  </div>
+  </div>
 <br>
   <div class="columns is-centered"> 
   <div class="field is-grouped">
     <div class="control">
-      <button id="submit" class="button is-link">Submit</button>
+      <button id="submit" class="button is-dark bttn">Submit</button>
     </div>
     <div class="control">
-      <button id="cancel" class="button is-link is-light">Cancel</button>
+      <button id="cancel" class="button is-link is-light bttn">Cancel</button>
     </div>
   </div>
 </div>
+<br>
 </div>
 </div>
 <div class="columns is-centered"> 
   <div class="submitPage">
+    <br><br>
     <h1>Thank you for your submission!</h1><br>
     <h1> We will review your application and follow up with you should we have any questions.</h1> 
     <img src="paw.gif" alt="paw logo">
-    <button id="home">Home</button>
+    <div class="control">
+      <button class="button bttn" id="home">Home</button>
     </div>
-  </div>
-<script src="adopt-form.js"></script>
+  </div>   
+</div>
 </body>
+<script src="adopt-form.js"></script>
 </html>
