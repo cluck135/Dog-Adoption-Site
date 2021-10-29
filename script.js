@@ -294,3 +294,8 @@ randomBtn.addEventListener("click", function () {
   randDogBreedThree.innerHTML = "";
   displayRandomDogs(randomDoggo);
 });
+
+
+function addd(){
+  return;
+}
