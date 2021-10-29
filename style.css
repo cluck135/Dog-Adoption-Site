@@ -109,3 +109,13 @@ li a {
   color: white;
   font-size: 20px;
 }
+.adoption-button {
+  background-color: rgba(245, 142, 7, 0.863);
+  border-radius: 10px;
+
+
+}
+.adoption-button:hover{
+  box-shadow: black 10px 5px 5px;
+  transition: 0.5s;
+}

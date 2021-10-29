@@ -22,6 +22,8 @@ let randomNumber = Math.floor(
   Math.random() * (maxNumber - minNumber) + minNumber
 );
 
+var audio = new Audio("Projects\Dog-Adoption-Site\single-dog-woof-sound.mp3");
+
 displayRandomDogs(randomDoggo);
 
 function displayRandomDogs(randomDoggo) {
@@ -93,6 +95,7 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
   .then(function (data) {
     console.log(data);
     localStorage.setItem("auth", JSON.stringify(data));
+    getAdoptionList();
   });
 
 let randAuthToken = JSON.parse(localStorage.getItem("auth"));
@@ -120,7 +123,7 @@ myHeaders.append("Authorization", "Bearer " + authToken + "");
 //     console.log(data);
 //     let Doggo1 = data;
 //   });
-
+function getAdoptionList(){
 fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
   method: "GET",
   headers: myHeaders,
@@ -187,7 +190,7 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
 
       adoptionList.appendChild(li);
     }
-  });
+  })};
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
@@ -199,7 +202,8 @@ randDoggos.addEventListener("click", function (e) {
   let index = e.target.dataset.index;
   let randBreedArray = JSON.parse(localStorage.getItem("breeds"));
   let breed = randBreedArray[index];
-
+  audio.play()
+  if(e.target.dataset.index !== undefined){
   fetch(
     "https://api.petfinder.com/v2/animals?type=dog&breed=" + breed + "&page=1",
     {
@@ -232,20 +236,25 @@ randDoggos.addEventListener("click", function (e) {
         }
         let li = document.createElement("li");
         let div = document.createElement("div");
+        div.classList.add("pet-finder-div");
         let anchor = document.createElement("a");
         let formAnchor = document.createElement("a");
         let formBtn = document.createElement("button");
-        anchor.target = "_blank";
+        formBtn.classList.add("adoption-button");
         formAnchor.setAttribute("href", "./adopt-form.html");
         formBtn.innerText = "Adoption Form";
+        formAnchor.target = "_blank";
+        anchor.target = "_blank";
         let name = document.createElement("h1");
+        name.setAttribute("id", "pet-finder-name");
         let url = Doggo1.animals[i].url;
         let pic = document.createElement("img");
         let desc = document.createElement("p");
+        desc.setAttribute("id", "pet-finder-description");
         li.style.display.flex;
         anchor.style.display.inline;
         name.textContent = dogName;
-
+  
         name.style.fontSize = "40px";
         div.style.display.inline;
         desc.innerText = dogDesc;
@@ -255,22 +264,29 @@ randDoggos.addEventListener("click", function (e) {
           pic.setAttribute("src", placeholder);
         }
         pic.setAttribute("class", "dogImg");
-
+  
         anchor.setAttribute("href", url);
         anchor.appendChild(pic);
         formAnchor.appendChild(formBtn);
-
+  
         div.appendChild(name);
         div.appendChild(desc);
         div.appendChild(formAnchor);
-
+  
         li.appendChild(anchor);
         li.appendChild(div);
-
+  
         adoptionList.appendChild(li);
       }
-    });
+    })}
+    else{
+      errorMsg.innerText = "Click the image not the text!"
+    };
 });
+
+function playAudio() { 
+  x.play(); 
+} 
 
 randomBtn.addEventListener("click", function () {
   randDogBreedOne.innerHTML = "";
