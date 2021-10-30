@@ -16,9 +16,9 @@ submitBtn.addEventListener("click", function(){
         errorEl.innerText = "Please enter valid contact information!";
     } else if (!addressEl.value) {
         errorEl.innerText = "Please enter valid contact information!";
-    } else if (!emailValue) {
+    } else if (!emailEl.value) {
       errorEl.innerText = "Please enter valid contact information!";  
-    } else if (!cellValue){
+    } else if (!cellEl.value) {
       errorEl.innerText = "Please enter valid contact information!";
     } else {
       Page1.style.display = 'none';
