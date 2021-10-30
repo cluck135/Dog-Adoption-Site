@@ -93,37 +93,22 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
     }
   })
   .then(function (data) {
-    console.log(data);
-    localStorage.setItem("auth", JSON.stringify(data));
-    getAdoptionList();
+    getAdoptionList(data);
   });
 
-let randAuthToken = JSON.parse(localStorage.getItem("auth"));
-let authToken = randAuthToken["access_token"];
-console.log(authToken);
 
-const myHeaders = new Headers();
+
+  const myHeaders = new Headers();
+
+
+function getAdoptionList(data){
+  console.log(data)
+  let authToken = data["access_token"];
+
 
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", "Bearer " + authToken + "");
 
-// fetch("https://api.petfinder.com/v2/types/Dog/breeds", {
-//   method: "GET",
-//   headers: myHeaders,
-// })
-//   .then(function (response) {
-//     console.log(response);
-//     if (response.ok) {
-//       return response.json();
-//     } else {
-//       throw new Error(message || response.status);
-//     }
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//     let Doggo1 = data;
-//   });
-function getAdoptionList(){
 fetch("https://api.petfinder.com/v2/animals?type=dog&page=" + randomNumber, {
   method: "GET",
   headers: myHeaders,
