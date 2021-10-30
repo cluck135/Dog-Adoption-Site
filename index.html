@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Dog Adoption</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Dog Adoption</title>
 </head>
+
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <img class="is-rounded" src="./paw.gif" alt="Dog Paw Print" width="100" height="100">
-            <h1 class="has-text-weight-bold has-text-white is-size-1 ml-5">My Dog Adoption</h1>
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item has-text-white has-text-weight-semibold is-size-4 navbar-text">
-              Home
-            </a>
-      
-            <a class="navbar-item has-text-white has-text-weight-semibold is-size-4" href="#about">
-                About
-              </a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <img class="is-rounded" src="./paw.gif" alt="Dog Paw Print" width="100" height="100">
+      <h1 class="has-text-weight-bold has-text-white is-size-1 ml-5">My Dog Adoption</h1>
+      </a>
 
-      
-          </div>
-        </div>
-      </nav>
-    <main class="mb-20">
-        <div class="columns">
-            <div id="facts" class="column ml-5 mt-4">
-                Approximately 6.5 million companion animials enter U.S. animal shelters nationwide every year. More than half will not make it out alive 
-            </div>
-            <div id="facts" class="column ml-5 mt-4">
-                In just six years, one unspayed female dog and her offspring can create 67,000 dogs
-            </div>
-                
-        </div>
-
-        <div id="random-div">
-          <button id="random-button" class="ml-4" type ="button"> Randomize</button>
-          <p class="ml-4"> Click on an image to filter results below!</p> 
-        </div>
-    </main>
-    <section class="columns randImgs" >
-        <div class="column is-one-third">
-          <img data-index="0" class="randImg" id="random1"></img>
-          <h6 class="ml-4 random-breed" id="rand-dog-breed-one"></h6>
-        </div>
-        <div class="column is-one-third" >
-          <img data-index="1"class="randImg" id="random2"></img>
-          <h6 class="ml-4 random-breed" id="rand-dog-breed-two"></h6>
-        </div>
-        <div class="column is-one-third" >
-          <img data-index="2" class="randImg" id="random3"></img>
-          <h6 class="ml-4 random-breed" id="rand-dog-breed-three"></h6>
-        </div>
-    </section>
-    <div class="columns is-centered" id="error-message"> 
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-    <article>
-        <ul id="adoptionList">
 
-        </ul>
-    </article>
-    <div>
-      <h1 class= "has-text-white has-text-weight-bold is-size-3 has-text-black" id="about">
-        About
-      </h1>
-      <p>
-        Dogs love everybody, but everybody does not love dogs. Unfortunately, dogs are neglected by owners and even abandoned, forced to fend for themselves. Thankfully,
-        there are many organizations that take these dogs into shelter and give them a safe space. We wanted to make a website that allowed dog adopters to easily search for
-        dogs that are available for adoption through the PetFinder API. If dog adopters were unsure of the type of dogs they wanted, we displayed random pictures of dogs 
-        to help their decision process. 
-      </p>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item has-text-white has-text-weight-semibold is-size-4 navbar-text">
+          Home
+        </a>
+
+        <a class="navbar-item has-text-white has-text-weight-semibold is-size-4" href="#about">
+          About
+        </a>
+
+
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="./script.js"></script>
+  </nav>
+  <main class="mb-20">
+    <div class="columns">
+      <div id="facts" class="column ml-5 mt-4">
+        Approximately 6.5 million companion animals enter U.S. animal shelters nationwide every year. More than half
+        will not make it out alive
+      </div>
+      <div id="facts" class="column ml-5 mt-4">
+        In just six years, one unspayed female dog and her offspring can create 67,000 dogs
+      </div>
+
+    </div>
+
+    <div id="random-div">
+      <button id="random-button" class="ml-4" type="button"> Randomize</button>
+      <p class="ml-4"> Click on an image to filter results below!</p>
+    </div>
+  </main>
+  <section class="columns randImgs">
+    <div class="column is-one-third">
+      <img data-index="0" class="randImg" id="random1"></img>
+      <h6 class="ml-4 random-breed" id="rand-dog-breed-one"></h6>
+    </div>
+    <div class="column is-one-third">
+      <img data-index="1" class="randImg" id="random2"></img>
+      <h6 class="ml-4 random-breed" id="rand-dog-breed-two"></h6>
+    </div>
+    <div class="column is-one-third">
+      <img data-index="2" class="randImg" id="random3"></img>
+      <h6 class="ml-4 random-breed" id="rand-dog-breed-three"></h6>
+    </div>
+  </section>
+  <div class="columns is-centered" id="error-message">
+  </div>
+  <article>
+    <ul id="adoptionList">
+
+    </ul>
+  </article>
+  <div>
+    <h1 class="has-text-white has-text-weight-bold is-size-3 has-text-black" id="about">
+      About
+    </h1>
+    <p>
+      Dogs love everybody, but everybody does not love dogs. Unfortunately, dogs are neglected by owners and even
+      abandoned, forced to fend for themselves. Thankfully,
+      there are many organizations that take these dogs into shelter and give them a safe space. We wanted to make a
+      website that allowed dog adopters to easily search for
+      dogs that are available for adoption through the PetFinder API. If dog adopters were unsure of the type of dogs
+      they wanted, we displayed random pictures of dogs
+      to help their decision process.
+    </p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="./script.js"></script>
 </body>
+
 </html>
